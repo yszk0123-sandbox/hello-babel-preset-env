@@ -10,14 +10,18 @@
     "browserify": "npm-run-all browserify:*",
     "browserify:class": "mkdir -p dist/class && browserify src/class/index.js -t babelify -o dist/class/build.js",
     "browserify:polyfill": "mkdir -p dist/polyfill && browserify src/polyfill/index.js -t babelify -o dist/polyfill/build.js",
-    "browserify:runtime": "mkdir -p dist/runtime && browserify src/runtime/index.js -t babelify -o dist/runtime/build.js"
+    "browserify:runtime": "mkdir -p dist/runtime && browserify src/runtime/index.js -t babelify -o dist/runtime/build.js",
+    "webpack:nobabel": "rm -rf dist && webpack --config webpack.config.nobabel.js",
+    "webpack:babel": "rm -rf dist && webpack --config webpack.config.babel.js"
   },
   "devDependencies": {
+    "babel-loader": "^6.2.10",
     "babel-plugin-transform-runtime": "^6.22.0",
     "babel-preset-env": "^1.1.8",
     "babelify": "^7.3.0",
     "browserify": "^14.0.0",
-    "npm-run-all": "^4.0.1"
+    "npm-run-all": "^4.0.1",
+    "webpack": "^2.2.1"
   },
   "dependencies": {
     "babel-polyfill": "^6.22.0",
